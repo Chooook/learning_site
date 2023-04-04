@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            Title
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+</head>
+
+<body>
+{% include 'include/header.html' %}
+<hr>
+
+<div class="container">
+{% block body %}
+{% endblock %}
+</div>
+<hr>
+
+{% include 'include/footer.html' %}
+
+<script src="/static/js/bootstrap.bundle.js"></script>
+</body>
+</html>
