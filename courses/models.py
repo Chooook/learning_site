@@ -60,8 +60,8 @@ class Teacher(PersonMixin):
         help_text='Компетенции преподавателя.'
     )
     taught_courses = models.ManyToManyField(
-        Course, related_name='course_teachers',
-        blank=True, help_text='Курсы, в которых преподаватель задействован.'
+        Course, related_name='course_teachers', blank=True,
+        help_text='Курсы, в которых преподаватель задействован.'
     )
 
 

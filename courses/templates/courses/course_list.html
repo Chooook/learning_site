@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Courses list
+{% endblock %}
+
+{% block body %}
+  <h1>Courses</h1>
+  {% if course_list %}
+    <h3>Courses list</h3>
+    <ul>
+      {% for course in course_list %}
+        <li>
+          <a href="{% url 'courses:course-detail' pk=course.pk %}">
+            {{ course }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <h4>There is no courses yet</h4>
+  {% endif %}
+{#    {% if user.is_superuser %}#}
+    <a class="btn btn-primary" href="{% url 'courses:course-create' %}">Create</a>
+{#    {% endif %}#}
+{% endblock %}

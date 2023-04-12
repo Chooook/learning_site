@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Course {{ object|title }} details
+{% endblock %}
+
+{% block body %}
+  <h1>Category {{ object|title }} details</h1>
+  <ul>
+    <li>
+      Name: {{ object }}
+    </li>
+  </ul>
+  <a class="btn btn-primary" href="{% url 'courses:course-update' pk=object.pk %}">Change</a>
+  <a class="btn btn-danger" href="{% url 'courses:course-delete' pk=object.pk %}">Delete</a>
+{% endblock %}
